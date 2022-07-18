@@ -7,7 +7,7 @@ public class Main {
 		System.out.println("      ***Welcome***      ");//Prints welcome message.
 		
 		IdentifieR obj=new IdentifieR();
-		obj.UserIdentifier();//calling the method to check admin or user.
+		obj.UserIdentifier();//calling the method to check admin or user test.
 	}
 
 }
