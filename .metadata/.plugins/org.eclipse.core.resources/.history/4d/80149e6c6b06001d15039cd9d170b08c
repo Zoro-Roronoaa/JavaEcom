@@ -28,10 +28,10 @@ public class Admin {
 
 			while (rs.next()) {
 
-				System.out.println("UserName=" + rs.getString(1));
-				//System.out.println("Product_id =" + rs.getInt(2));
-				System.out.println("ProductName=" + rs.getString(2));   //printing the satatements using while loop
-				System.out.println("Quantity=" + rs.getInt(3));
+				System.out.println("User_id=" + rs.getInt(1));
+				System.out.println("Product_id =" + rs.getInt(2));
+				System.out.println("Product_Name=" + rs.getString(3));   //printing the satatements using while loop
+				System.out.println("Quantity=" + rs.getInt(4));
                                 System.out.println("------------------------------------------------------------------");
 			}
 
@@ -58,7 +58,6 @@ public class Admin {
 		ResultSet rs=ps.executeQuery();         //selecting Resultset which is use to print the table content
 		
 		while(rs.next()) {
-			
 			
 			System.out.println("Product_id="+rs.getInt(1));
 			System.out.println("Descrpition ="+rs.getString(2));
@@ -153,7 +152,6 @@ public class Admin {
 
 			}
 		}
-	  }
-}
+	}
 	   	  
 	   	
