@@ -1,0 +1,25 @@
+package com.MAINM;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class SelectProducts {
+
+	public void selection() throws ClassNotFoundException, SQLException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Product_ID to buy");
+		int productId = sc.nextInt();
+		System.out.println("Enter Quantity");
+		int quantity = sc.nextInt();
+		Cart item = new Cart();
+
+		switch (productId) {
+
+		case 101:
+			item.updateCart(productId, quantity);
+
+		}
+
+	}
+
+}

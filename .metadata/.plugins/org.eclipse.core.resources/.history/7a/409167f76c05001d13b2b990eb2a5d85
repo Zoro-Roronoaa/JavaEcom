@@ -1,0 +1,32 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.databases.ConnectionUtility;
+
+public class Cart {
+	
+	
+	public int updateCart(String productId,int quantity) throws ClassNotFoundException, SQLException {
+		int a=0;
+		ConnectionUtility obj=new ConnectionUtility();
+		Connection con=obj.getConnection();
+		PreparedStatement stmt=con.prepareStatement("select * from Products where Product_id=?");
+		stmt.setString(1, productId);
+		ResultSet rs=stmt.executeQuery();
+		System.out.println("e");
+		while(rs.next()) {
+			System.out.println("In loop");
+			a=quantity*rs.getInt(3);
+			System.out.println(a);
+			System.out.println("In loop");
+			
+		}
+		System.out.println("Outside");
+		return a;
+	}
+
+}

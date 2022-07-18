@@ -1,0 +1,32 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.databases.ConnectionUtility;
+
+public class SelectProducts {
+	
+	public void selection() throws ClassNotFoundException, SQLException {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Product_ID to buy");
+		ConnectionUtility obj=new ConnectionUtility();
+		Connection con=obj.getConnection();
+		int productId=sc.nextInt();
+		switch(productId) {
+		/*case 1:
+			databaseUpd(int prodId,int quantity);
+			Statement stmt=con.createStatement();   //select Price from Ecom.products where Id=101;
+			ResultSet rs=stmt.executeQuery("select Price from Ecom.products where Id=101");
+			System.out.println();*/
+		}
+		
+		 
+		
+	}
+	
+
+}

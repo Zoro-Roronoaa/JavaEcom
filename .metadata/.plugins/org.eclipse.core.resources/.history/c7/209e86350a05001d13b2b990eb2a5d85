@@ -1,0 +1,32 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.databases.ConnectionUtility;
+
+public class ProductDetails {
+
+	public void getProductDetails() throws Exception {
+		ConnectionUtility obj=new ConnectionUtility();
+		Connection con=obj.getConnection();
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM products");
+		System.out.println(
+				"Product_id   \t\t      Description     \t\t          Price  \t\t   Product_name      \t\t       Quantity");
+
+		while (rs.next()) {
+			int Product_id = rs.getInt("Product_id");
+			String Description = rs.getString("Description");
+			String Price = rs.getString("Price");
+			String Product_name = rs.getString("Product_name");
+			int Quantity = rs.getInt("Quantity");
+			System.out.println(Product_id + " \t\t " + Description + " \t\t  " + Price + "   \t\t      " + Product_name
+					+ "   \t\t    " + Quantity);
+
+		}
+
+	}
+
+}

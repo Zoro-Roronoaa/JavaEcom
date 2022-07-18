@@ -1,0 +1,34 @@
+package com.MAINM;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.databases.ProductDetails;
+
+public class Customer {
+
+	public void display() throws Exception {
+
+		ProductDetails obj = new ProductDetails();
+		obj.getProductDetails();
+
+	}
+
+	public void selection() throws ClassNotFoundException, SQLException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Product_ID to buy");
+		int productId = sc.nextInt();
+		System.out.println("Enter Quantity");
+		int quantity = sc.nextInt();
+		Cart item = new Cart();
+
+		switch (productId) {
+
+		case 101:
+			item.updateCart(productId, quantity);
+
+		}
+
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.MAINM;
+
+import java.util.Scanner;
+
+public class IdentifieR {
+
+	public void UserIdentifier() throws Exception {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Are you a customer or admin?");
+		System.out.println("Enter 1 for Customer or 2 for Admin");
+		int check = sc.nextInt();
+		if (check == 1) {
+
+			Customer cus = new Customer();
+			// komal's
+			cus.display();// displays product list
+			cus.carting();
+
+		} else if (check == 2) {
+			Admin adm=new Admin();
+			adm.GetDatabase();
+
+		} else {
+
+			System.out.println("Invalid Input");
+
+		}
+
+	}
+
+}

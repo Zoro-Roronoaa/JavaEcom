@@ -1,0 +1,22 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.databases.ConnectionUtility;
+
+public class SelectProducts {
+	
+	public void selection() throws ClassNotFoundException, SQLException {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Product_ID to buy");
+		ConnectionUtility obj=new ConnectionUtility();
+		Connection con=obj.getConnection();
+		
+		 
+		
+	}
+	
+
+}

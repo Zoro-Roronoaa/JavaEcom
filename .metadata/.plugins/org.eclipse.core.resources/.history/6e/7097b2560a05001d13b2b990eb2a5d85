@@ -1,0 +1,19 @@
+package com.MAINM;
+
+public class Customer {
+	
+	public void buy() throws Exception {
+		
+		/*UserRegister obj=new UserRegister();
+		obj.getUserData();*/
+		ProductDetails obj2=new ProductDetails();
+		obj2.getProductDetails();
+		SelectProducts obj3=new SelectProducts();
+		
+		
+		
+		
+		
+	}
+
+}

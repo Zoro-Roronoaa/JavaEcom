@@ -1,0 +1,112 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.databases.ConnectionUtility;
+
+public class Admin {
+	
+	
+	     
+	  public void ProductDetails()  {
+		  ConnectionUtility obj= new ConnectionUtility();
+		
+		PreparedStatement ps=null;
+		
+		try {
+			
+			Connection con=obj.getConnection();
+	      ps=con.prepareStatement("select * from products ");
+
+		ResultSet rs=ps.executeQuery();
+		
+		while(rs.next()) {
+			
+			System.out.println("Product_id="+rs.getInt(1));
+			System.out.println("Descrpition ="+rs.getString(2));
+			System.out.println("Price="+rs.getInt(3));
+			System.out.println("Product_Name="+rs.getString(4));
+			System.out.println("Quanity="+rs.getInt(5));
+		}
+		con.close();
+		ps.close();
+		rs.close();
+
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			}
+	   }
+	  
+	  public void UseRegistration() {
+		  
+			Connection con=null;
+			PreparedStatement ps=null;
+			
+			try {
+				
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Step1");
+			String url="jdbc:mysql://localhost:3306/ECommerce";
+			String username="root";
+			String password="MySql@123";
+		    con=DriverManager.getConnection(url, username, password);
+		      ps=con.prepareStatement("select * from UserRegistration");
+
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("UserId="+rs.getInt(1));
+				System.out.println("UserFirstName ="+rs.getString(2));
+				System.out.println("UserLastName="+rs.getString(3));
+                System.out.println("UserContactNo="+rs.getLong(4));
+                System.out.println("UserCity="+rs.getString(5));
+				
+			}
+			
+			con.close();
+			ps.close();
+			rs.close();
+
+		   }
+			catch(Exception e) {
+				e.printStackTrace();
+				}
+		   }
+		  
+		  
+	  
+	  public static void GetDatabase()  {
+	   	  
+	   	  Admin admin=new Admin();
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the Required Details:Product_Details or User_Details ");
+		
+		  String Data=sc.next();
+		  String s="Product_Details";
+		  String r="User_Details";
+		  
+		if(s.equals(Data)) {
+			admin.ProductDetails();
+			
+		}
+		else if(r.equals(Data)) {
+			
+			admin.UseRegistration();
+			
+		
+			
+		}
+	   }
+	  
+
+}
+
+

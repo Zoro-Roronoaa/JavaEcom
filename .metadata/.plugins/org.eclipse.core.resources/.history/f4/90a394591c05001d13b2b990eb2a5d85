@@ -1,0 +1,17 @@
+package com.MAINM;
+
+import com.databases.ProductDetails;
+
+public class Customer {
+	
+	public void display() throws Exception {
+		
+		ProductDetails obj=new ProductDetails();
+		obj.getProductDetails();
+		
+		
+		
+		
+	}
+
+}

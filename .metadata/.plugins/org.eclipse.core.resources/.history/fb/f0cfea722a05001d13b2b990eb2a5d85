@@ -1,0 +1,12 @@
+package com.MAINM;
+
+public class Cart {
+	
+	
+	public void updateCart(int productId,int quantity) {
+		
+		
+		
+	}
+
+}

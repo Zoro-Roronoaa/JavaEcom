@@ -1,0 +1,19 @@
+package com.MAINM;
+
+public class Customer {
+	
+	public void buy() {
+		
+		UserRegister obj=new UserRegister();
+		obj.getUserData();
+		ProductDatabase obj2=new ProductDatabase();
+		obj2.getProductDetails();
+		SelectProducts obj3=new SelectProducts();
+		
+		
+		
+		
+		
+	}
+
+}

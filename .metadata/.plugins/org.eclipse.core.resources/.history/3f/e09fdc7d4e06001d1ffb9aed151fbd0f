@@ -1,0 +1,31 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import com.databases.ConnectionUtility;
+
+public class TotalPrice {
+
+	public int totalcalculator(int productId, int quantity) throws Exception {
+			
+		int a=0;//Stores total price of bought product
+		ConnectionUtility obj=new ConnectionUtility();
+		Connection con=obj.getConnection();
+		PreparedStatement stmt=con.prepareStatement("select Price from Products where Product_id="+productId);
+		ResultSet rs=stmt.executeQuery();
+		while(rs.next()) {
+			a=quantity*rs.getInt("Price");
+			
+		}
+		return a;
+			
+			
+
+		}
+
+	}
+
+

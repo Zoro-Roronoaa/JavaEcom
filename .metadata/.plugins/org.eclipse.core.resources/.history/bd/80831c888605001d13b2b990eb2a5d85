@@ -1,0 +1,40 @@
+package com.MAINM;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.databases.ProductDetails;
+
+public class Customer {
+
+	public void display() throws Exception {
+
+		ProductDetails obj = new ProductDetails();
+		obj.getProductDetails();
+
+	}
+
+	public void carting() throws ClassNotFoundException, SQLException {
+		Scanner sc = new Scanner(System.in);
+		int i = 0;
+		int total = 0;
+		System.out.println("Enter Product_ID to buy");
+		int productId = sc.nextInt();
+		System.out.println("Enter Quantity");
+		int quantity = sc.nextInt();
+
+		while (i == 0) {
+
+			Cart item = new Cart();
+			total = total + item.updateCart(productId, quantity);
+			System.out.println("Buy More Products? 0(yes)/1(no)");
+			int term = sc.nextInt();
+			i = term;
+
+		}
+		System.out.println("Thank You For Shopping With Us!");
+		System.out.println("Your Total Cart Value is" + total);
+
+	}
+
+}

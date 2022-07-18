@@ -1,0 +1,48 @@
+package com.MAINM;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.databases.EnterUserData;
+import com.databases.ProductDetails;
+
+public class Customer {
+
+	public void userDetails() {
+
+		EnterUserData obj = new EnterUserData();
+		obj.getUserData();
+
+	}
+
+	public void display() throws Exception {
+
+		ProductDetails obj = new ProductDetails();
+		obj.getProductDetails();
+
+	}
+
+	public void carting() throws Exception {
+		int total = 0;
+		String i = "Yes";
+		Scanner sc = new Scanner(System.in);
+		while (i == "Yes") {
+			System.out.println("Enter Product_ID to buy");
+			int productId = sc.nextInt();
+			System.out.println("Enter Quantity");
+			int quantity = sc.nextInt();
+			// CalculateTotal
+			TotalPrice obj = new TotalPrice();
+			total = total + obj.totalcalculator(productId, quantity);
+			// update quantity
+			
+			//history(id,quantity,productid)
+			
+			System.out.println("Want to buy more? Yes/No");
+			String terminator =sc.next();
+			i=terminator;
+		}
+
+	}
+
+}
