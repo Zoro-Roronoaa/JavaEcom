@@ -1,6 +1,7 @@
 package com.MAINM;
 //Start of the program.
 public class Main {
+//taking main method
 
 	public static void main(String[] args) throws Exception {
 
