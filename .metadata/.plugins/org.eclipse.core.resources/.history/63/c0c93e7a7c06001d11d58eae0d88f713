@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class EnterUserData {
 	public static String username=null;
@@ -26,7 +24,7 @@ public class EnterUserData {
 			System.out.println("Enter your Last Name");
 			String uLastName = sc.next();
 			System.out.println("Enter your Mobile Number=");
-			String mobileNo = sc.next();
+			long mobileNo = sc.nextLong();
           String regex = "\\d{10}";
 		        Pattern pattern = Pattern.compile(regex);
 			     Matcher matcher = pattern.matcher(mobileNo );
@@ -40,7 +38,7 @@ public class EnterUserData {
 
 			stmt.setString(1, uFirstName);
 			stmt.setString(2, uLastName);
-			stmt.setString(3, mobileNo);
+			stmt.setLong(3, mobileNo);
 			stmt.setString(4, uCity);
 			stmt.executeUpdate();
 			System.out.println("User Data Entered Successfully");
