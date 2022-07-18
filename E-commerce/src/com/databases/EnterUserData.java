@@ -25,6 +25,14 @@ public class EnterUserData {
 			String uLastName = sc.next();
 			System.out.println("Enter your Mobile Number=");
 			long mobileNo = sc.nextLong();
+          String regex = "\\d{10}";
+		        Pattern pattern = Pattern.compile(regex);
+			     Matcher matcher = pattern.matcher(mobileNo );
+			      if(matcher.matches()) {
+			         System.out.println("Given phone number is valid");
+			      } else { 
+			         System.out.println("Given phone number is not valid");
+			      }
 			System.out.println("Enter Your City");
 			String uCity = sc.next();
 

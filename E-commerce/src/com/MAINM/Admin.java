@@ -27,6 +27,7 @@ public class Admin {
 		
 		while(rs.next()) {
 			
+			
 			System.out.println("Product_id="+rs.getInt(1));
 			System.out.println("Descrpition ="+rs.getString(2));
 			System.out.println("Price="+rs.getInt(3));
