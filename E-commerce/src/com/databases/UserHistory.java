@@ -7,11 +7,12 @@ import java.sql.SQLException;
 
 public class UserHistory {
 
-	public void storepurchase(String username, int productId, int quantity) throws Exception {
+	public void storepurchase(String username, int productId, int quantity) throws Exception //Here we check which product purchased by Customer
+    {
 		String productName=null;
 		ConnectionUtility obj = new ConnectionUtility();
 		Connection con = obj.getConnection();
-		PreparedStatement stmt=con.prepareStatement("select Product_Name from Products where Product_id="+productId);
+		PreparedStatement stmt=con.prepareStatement("select Product_Name from Products where Product_id="+productId);// By using product id we check which product  purchased by Customer 
 		ResultSet rs=stmt.executeQuery();
 		while(rs.next()) {
 			productName=rs.getString("Product_Name");
