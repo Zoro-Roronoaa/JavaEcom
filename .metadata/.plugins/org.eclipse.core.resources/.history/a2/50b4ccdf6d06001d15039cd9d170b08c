@@ -46,8 +46,6 @@ public class Customer extends EnterUserData {
 			i=terminator;//set while loop 
 		}
 		//displayitems(username);
-		CartDisplay obj5=new CartDisplay();
-		obj5.cartDisplay(usname);
 		
 		System.out.println("Total Cart Value is>>>> "+total);
 		System.out.println("Thankyou for shopping with us.");

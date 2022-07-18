@@ -1,0 +1,34 @@
+package com.MAINM;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.databases.ConnectionUtility;
+
+public class CartDisplay {
+
+	public void cartDisplay( String userName) throws Exception {//method which throws Exception
+		ConnectionUtility obj= new ConnectionUtility();
+		Connection con=obj.getConnection();
+		Statement stmt = con.createStatement();//created statement to execute query
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM userhistory;");//we can access table from database here
+		 System.out.println("Cart Display :");
+		 System.out.println("_______________________________");
+		 System.out.println("|ProductName    |     Quantity|");//sop to print
+		 System.out.println("|_____________________________|");
+         
+		 //loop for executeQuery with ResultSet  obj rs next
+		 while (rs.next()) {
+			 String ProductName = rs.getString("ProductName");//product name from database_table
+			 int Quantity = rs.getInt("Quantity");//Quantity  from database_table
+			 System.out.println("|"+ProductName+"     |       "+Quantity+     "     |");
+			 //printed that values or table table here
+			 System.out.println("|_____________________________|");
+		 }
+         
+		
+	}
+	
+	
+}
